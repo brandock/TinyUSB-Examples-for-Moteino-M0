@@ -1,7 +1,16 @@
-/* Brandon Baldock: This sketch mounts the SPIFlash as a USB drive and logs random data to a the next 
- *  available file in the sequence data1.csv, data2.csv, etc.
- *  It would be better if it detected the presence of USB and did the former if so and the later if not. 
- *  Note that because of this, it currently must be plugged into USB during the setup phase. 
+/* Brandon Baldock: This sketch for Moteino M0 combines the SDFat_datalogging and msc_external_flash
+ * examples from the Adafruit TinyUSB Library. 
+ * 
+ * The sketch defines the Winbond SPIFlash that is standard on
+ * the Moteino, defines EXTERNAL_FLASH_USE chip selector for the Moteino, and sets the radio pin
+ * HIGH to prevent it from inteferring.
+ * 
+ * Beyond that the modification is to combine the behavior of the two sketches so that the data 
+ * is logged and can be retreived via USB drive when plugged into a PC.
+ * 
+ * The sketch finds the next unused file in the sequence data1.csv, data2.csv, and logs to this file.
+ * 
+ * It is designed to be compiled with the USBTiny Stack for the Moteino M0 board. 
  */
 
 /*********************************************************************
