@@ -11,6 +11,8 @@
  * The sketch finds the next unused file in the sequence data1.csv, data2.csv, and logs to this file.
  * 
  * It is designed to be compiled with the USBTiny Stack for the Moteino M0 board. 
+ *
+ * Before running this sketch use the SdFat_format sketch to format your SPI flash as a FAT USB drive.
  */
 
 /*********************************************************************
